@@ -1313,6 +1313,25 @@ img.profile-pic{
   to{ transform: scale(1); opacity: 1; }
 }
 
+/* =========================
+   NAVBAR FINAL FIX (ALL DEVICE)
+========================= */
+.navbar .nav-links a,
+.navbar .nav-links a:visited,
+.navbar .nav-links a:hover,
+.navbar .nav-links a:active,
+.navbar .nav-links a:focus {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+/* buang highlight biru mobile */
+.navbar .nav-links a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
 
 
 
