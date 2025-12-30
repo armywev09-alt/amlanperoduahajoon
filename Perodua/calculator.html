@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Loan Perodua</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <a class="brand" href="index.html">
+    <div class="brand-text">
+      <div class="brand-title">Perodua Hajoon Sabah</div>
+      <div class="brand-sub">Sales Advisor • Promosi • Loan Mudah</div>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="models.html">Model</a>
+    <a href="calculator.html" class="active">Kalkulator</a>
+    <a href="about.html">Tentang Saya</a>
+    <a href="contact.html">Hubungi</a>
+  </div>
+</nav>
+
+<section class="section">
+  <h1 class="center">Kalkulator Loan Perodua</h1>
+  <p class="center muted">Pilih model → variant → ansuran keluar automatik</p>
+
+  <div class="car-preview">
+    <img id="carImage" src="images/myvi.jpg" alt="Model Perodua">
+  </div>
+
+  <div class="promo-ticker">
+    <div class="promo-track">
+      PROMOSI PERODUA ARUZ REBAT RM800 • PROMOSI PERODUA ATIVA REBAT RM7,000
+    </div>
+  </div>
+
+  <div class="loan-box">
+
+    <label>Model</label>
+    <select id="modelSelect">
+      <option value="">Pilih Model</option>
+      <option>Axia</option>
+      <option>Bezza</option>
+      <option>Myvi</option>
+      <option>Ativa</option>
+      <option>Alza</option>
+      <option>Aruz</option>
+      <option>Traz</option>
+    </select>
+
+    <label>Variant</label>
+    <select id="variantSelect" disabled>
+      <option value="">Pilih Variant</option>
+    </select>
+
+    <label>Harga OTR (RM)</label>
+    <input id="priceInput" readonly>
+
+    <label>Deposit (RM)</label>
+    <input id="depositInput" value="0">
+
+    <label>Kadar Faedah (%)</label>
+    <input id="interestInput">
+
+    <label>Tempoh (Tahun)</label>
+    <select id="yearInput">
+      <option>5</option>
+      <option>7</option>
+      <option selected>9</option>
+    </select>
+
+    <h3 id="resultText">Ansuran Bulanan: —</h3>
+
+    <a id="waBtn" class="btn-whatsapp" target="_blank" style="display:none;">
+      WhatsApp Untuk Quotation
+    </a>
+
+  </div>
+</section>
+
+<a class="wa-float" href="https://wa.me/60109533465" target="_blank">WhatsApp</a>
+
+<script>
+/* ======================
+   DATA
+====================== */
+const WA = "60109533465";
+
+const data = {
+  Axia:{G:41853,X:43275,SE:47362,AV:52972},
+  Bezza:{"G (Manual)":37745,G:39789,X:47342,AV:53474},
+  Myvi:{G:49906,"G (ASA)":51950,X:54442,H:58529,AV:63639},
+  Ativa:{
+    "X (Metallic)":66293,
+    "H (Metallic)":71203,
+    "H (Special Metallic)":71725,
+    "AV (Metallic)":76635,
+    "AV (Special Metallic)":77135,
+    "AV (2-Tone)":77435
+  },
+  Alza:{X:66815,H:72447,AV:80100},
+  Aruz:{X:76935,AV:82044},
+  Traz:{X:80463,H:85567,"H (2-Tone)":86448}
+};
+
+const interestRates = {
+  Axia:3.2, Bezza:3.2, Myvi:3.1,
+  Ativa:2.6, Alza:2.6, Aruz:2.5, Traz:2.3
+};
+
+const carImages = {
+  Axia:"images/axia.jpg",
+  Bezza:"images/bezza.jpg",
+  Myvi:"images/myvi.jpg",
+  Ativa:"images/ativa.jpg",
+  Alza:"images/alza.jpg",
+  Aruz:"images/aruz.jpg",
+  Traz:"images/traz.jpg"
+};
+
+/* ======================
+   ELEMENT
+====================== */
+const modelSelect = document.getElementById("modelSelect");
+const variantSelect = document.getElementById("variantSelect");
+const priceInput = document.getElementById("priceInput");
+const depositInput = document.getElementById("depositInput");
+const interestInput = document.getElementById("interestInput");
+const yearInput = document.getElementById("yearInput");
+const resultText = document.getElementById("resultText");
+const waBtn = document.getElementById("waBtn");
+const carImage = document.getElementById("carImage");
+
+/* ======================
+   CALC FUNCTION
+====================== */
+function calcLoan() {
+  const model = modelSelect.value;
+  const variant = variantSelect.value;
+  const price = Number(priceInput.value);
+  const deposit = Number(depositInput.value || 0);
+  const rate = Number(interestInput.value) / 100;
+  const years = Number(yearInput.value);
+
+  if (!model || !variant || !price) return;
+
+  const loan = price - deposit;
+  const monthly = (loan + loan * rate * years) / (years * 12);
+
+  resultText.innerText = "Ansuran Bulanan: RM " + monthly.toFixed(2);
+
+  const msg =
+`Hi Amlan,
+Saya berminat dengan Perodua ${model} ${variant}.
+
+Harga OTR: RM ${price}
+Deposit: RM ${deposit}
+Tempoh: ${years} tahun
+Kadar faedah: ${interestInput.value}%
+
+Anggaran ansuran: RM ${monthly.toFixed(2)}
+
+Boleh bagi quotation & promosi terkini?`;
+
+  waBtn.href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+  waBtn.style.display = "block";
+}
+
+/* ======================
+   MODEL CHANGE
+====================== */
+modelSelect.addEventListener("change", () => {
+  const model = modelSelect.value;
+
+  variantSelect.innerHTML = "<option value=''>Pilih Variant</option>";
+  variantSelect.disabled = true;
+  priceInput.value = "";
+  depositInput.value = 0;
+  resultText.innerText = "Ansuran Bulanan: —";
+  waBtn.style.display = "none";
+
+  if (!model) return;
+
+  Object.keys(data[model]).forEach(v => {
+    const opt = document.createElement("option");
+    opt.value = v;
+    opt.textContent = v;
+    variantSelect.appendChild(opt);
+  });
+
+  variantSelect.disabled = false;
+  interestInput.value = interestRates[model];
+  carImage.src = carImages[model];
+});
+
+/* ======================
+   VARIANT CHANGE
+====================== */
+variantSelect.addEventListener("change", () => {
+  const model = modelSelect.value;
+  const variant = variantSelect.value;
+  if (model && variant) {
+    priceInput.value = data[model][variant];
+    calcLoan(); // 🔥 AUTO KIRA
+  }
+});
+
+/* ======================
+   AUTO KIRA BILA INPUT BERUBAH
+====================== */
+[depositInput, interestInput, yearInput].forEach(el => {
+  el.addEventListener("input", calcLoan);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hubungi | Hajoon Sabah</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+  <a class="brand" href="index.html">
+    <div class="brand-text">
+      <div class="brand-title">Perodua Hajoon Sabah</div>
+      <div class="brand-sub">Sales Advisor • Promosi • Loan Mudah</div>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="calculator.html">Kalkulator</a>
+  </div>
+</nav>
+
+
+  <nav class="navbar">
+    <a class="brand" href="index.html">
+      <img src="images/logo-hajoon.png" alt="Perodua Hajoon Sandakan" class="nav-logo">
+      <div class="brand-text">
+        <div class="brand-title">Perodua Hajoon Sabah</div>
+        <div class="brand-sub">Sales Advisor • Promosi • Loan Mudah</div>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="models.html">Model</a>
+      <a href="about.html">Tentang Saya</a>
+      <a href="contact.html" class="active">Hubungi</a>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Hubungi Saya</h2>
+      <p>Tekan WhatsApp untuk promosi & quotation cepat.</p>
+    </div>
+
+    <div class="contact-box">
+      <p><b>Lokasi:</b> Perodua Hajoon Sabah</p>
+      <p><b>Waktu:</b> Isnin–Ahad (ikut kesesuaian)</p>
+
+      <div class="center">
+        <a class="btn big" href="https://wa.me/60109533465">WhatsApp Sekarang</a>
+      </div>
+
+      <div class="note">
+        Tip: Beritahu model yang anda minat + deposit + tempoh (5/7/9 tahun) untuk saya kira ansuran.
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="copyright">© <span id="year"></span> Perodua Hajoon Sabah</div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/60109533465">WhatsApp</a>
+  <script src="script.js"></script>
+
+<!-- WHATSAPP INTRO POPUP -->
+<div class="wa-popup" id="waPopup">
+  <div class="wa-popup-card">
+    <button class="wa-close" onclick="closeWaPopup()">✕</button>
+
+    <img src="images/amlan.jpg" alt="Amlan Sales Advisor">
+
+    <h3>Hi, saya Amlan</h3>
+    <p>
+      Sales Advisor Perodua Hajoon Sabah.<br>
+      Jika anda perlukan bantuan berkaitan <b>harga, promosi atau loan</b>,
+      saya sedia bantu anda sekarang.
+    </p>
+
+    <a href="https://wa.me/60109533465?text=Hi%20Amlan,%20saya%20nak%20tanya%20tentang%20Perodua"
+       target="_blank"
+       class="wa-btn">
+       Chat WhatsApp Sekarang
+    </a>
+  </div>
+</div>
+
+<script>
+function closeWaPopup() {
+  document.getElementById("waPopup").style.display = "none";
+  localStorage.setItem("waPopupShown", "yes");
+}
+
+window.addEventListener("load", () => {
+  if (!localStorage.getItem("waPopupShown")) {
+    setTimeout(() => {
+      document.getElementById("waPopup").style.display = "block";
+    }, 3000);
+  }
+});
+</script>
+
+
+</body>
+</html>

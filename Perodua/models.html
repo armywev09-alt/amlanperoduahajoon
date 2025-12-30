@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Perodua & Harga OTR | Hajoon Sabah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+  <a class="brand" href="index.html">
+    <div class="brand-text">
+      <div class="brand-title">Perodua Hajoon Sabah</div>
+      <div class="brand-sub">Sales Advisor • Promosi • Loan Mudah</div>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="calculator.html">Kalkulator</a>
+  </div>
+</nav>
+
+
+  <a class="brand" href="index.html">Perodua Hajoon Sabah</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="models.html" class="active">Model & Harga</a>
+    <a href="about.html">Tentang Saya</a>
+    <a href="contact.html">Hubungi</a>
+  </div>
+</nav>
+
+<section class="section">
+  <h1 class="center">Model Perodua & Harga OTR</h1>
+  <p class="center muted">Harga OTR termasuk insurance. Tertakluk kepada promosi & kelulusan loan.</p>
+
+  <!-- FILTER + SEARCH -->
+  <div class="tools">
+    <div class="filter">
+      <button class="chip active" data-filter="all">Semua</button>
+      <button class="chip" data-filter="hatchback">Hatchback</button>
+      <button class="chip" data-filter="sedan">Sedan</button>
+      <button class="chip" data-filter="suv">SUV</button>
+      <button class="chip" data-filter="mpv">MPV</button>
+    </div>
+
+    <input id="searchBox" class="search" type="text" placeholder="Cari model / variant (contoh: Axia AV, 2-Tone, ASA)">
+  </div>
+
+  <!-- SELECTED VARIANT BAR -->
+  <div class="selected-bar" id="selectedBar">
+    <div class="selected-info">
+      <div class="selected-title" id="selTitle">Pilih variant untuk lihat harga + kira ansuran</div>
+      <div class="selected-sub" id="selSub">Klik mana-mana variant dalam senarai.</div>
+    </div>
+    <div class="selected-actions">
+      <a class="btn" id="waVariantBtn" href="https://wa.me/60123456789" target="_blank" rel="noopener">WhatsApp Variant</a>
+      <button class="btn ghost" id="openCalcBtn" type="button">Loan Calculator</button>
+    </div>
+  </div>
+
+  <!-- GRID MODELS -->
+  <div class="grid" id="modelGrid">
+
+    <!-- AXIA (HATCHBACK) -->
+    <div class="card model-card" data-cat="hatchback" data-keywords="axia g x se av">
+      <img src="images/axia.jpg" alt="Perodua Axia">
+      <div class="card-body">
+        <h3>Perodua Axia</h3>
+
+        <details class="variant-box">
+          <summary>Lihat Variant & Harga</summary>
+          <ul class="variant-list">
+            <li class="variant-item" data-model="Axia" data-variant="G" data-price="41853">
+              Axia G <span>RM 41,853</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Axia" data-variant="X" data-price="43275">
+              Axia X <span>RM 43,275</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Axia" data-variant="SE" data-price="47362">
+              Axia SE <span>RM 47,362</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Axia" data-variant="AV" data-price="52972">
+              Axia AV <span>RM 52,972</span> <button class="mini" type="button">Pilih</button>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <!-- BEZZA (SEDAN) -->
+    <div class="card model-card" data-cat="sedan" data-keywords="bezza g manual x av">
+      <img src="images/bezza.jpg" alt="Perodua Bezza">
+      <div class="card-body">
+        <h3>Perodua Bezza</h3>
+
+        <details class="variant-box">
+          <summary>Lihat Variant & Harga</summary>
+          <ul class="variant-list">
+            <li class="variant-item" data-model="Bezza" data-variant="G (Manual)" data-price="37745">
+              Bezza G (Manual) <span>RM 37,745</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Bezza" data-variant="G" data-price="39789">
+              Bezza G <span>RM 39,789</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Bezza" data-variant="X" data-price="47342">
+              Bezza X <span>RM 47,342</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Bezza" data-variant="AV" data-price="53474">
+              Bezza AV <span>RM 53,474</span> <button class="mini" type="button">Pilih</button>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <!-- MYVI (HATCHBACK) -->
+    <div class="card model-card" data-cat="hatchback" data-keywords="myvi g asa x h av">
+      <img src="images/myvi.jpg" alt="Perodua Myvi">
+      <div class="card-body">
+        <h3>Perodua Myvi</h3>
+
+        <details class="variant-box">
+          <summary>Lihat Variant & Harga</summary>
+          <ul class="variant-list">
+            <li class="variant-item" data-model="Myvi" data-variant="G" data-price="49906">
+              Myvi G <span>RM 49,906</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Myvi" data-variant="G (ASA)" data-price="51950">
+              Myvi G (ASA) <span>RM 51,950</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Myvi" data-variant="X" data-price="54442">
+              Myvi X <span>RM 54,442</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Myvi" data-variant="H" data-price="58529">
+              Myvi H <span>RM 58,529</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Myvi" data-variant="AV" data-price="63639">
+              Myvi AV <span>RM 63,639</span> <button class="mini" type="button">Pilih</button>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <!-- ATIVA (SUV) -->
+    <div class="card model-card" data-cat="suv" data-keywords="ativa x h av metallic special 2-tone tone">
+      <img src="images/ativa.jpg" alt="Perodua Ativa">
+      <div class="card-body">
+        <h3>Perodua Ativa</h3>
+
+        <details class="variant-box">
+          <summary>Lihat Variant & Harga</summary>
+          <ul class="variant-list">
+            <li class="variant-item" data-model="Ativa" data-variant="X (Metallic)" data-price="66293">
+              Ativa X (Metallic) <span>RM 66,293</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Ativa" data-variant="H (Metallic)" data-price="71203">
+              Ativa H (Metallic) <span>RM 71,203</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Ativa" data-variant="H (Special Metallic)" data-price="71725">
+              Ativa H (Special Metallic) <span>RM 71,725</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Ativa" data-variant="AV (Metallic)" data-price="76635">
+              Ativa AV (Metallic) <span>RM 76,635</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Ativa" data-variant="AV (Special Metallic)" data-price="77135">
+              Ativa AV (Special Metallic) <span>RM 77,135</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Ativa" data-variant="AV (2-Tone)" data-price="77435">
+              Ativa AV (2-Tone) <span>RM 77,435</span> <button class="mini" type="button">Pilih</button>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <!-- ALZA (MPV) -->
+    <div class="card model-card" data-cat="mpv" data-keywords="alza x h av">
+      <img src="images/alza.jpg" alt="Perodua Alza">
+      <div class="card-body">
+        <h3>Perodua Alza</h3>
+
+        <details class="variant-box">
+          <summary>Lihat Variant & Harga</summary>
+          <ul class="variant-list">
+            <li class="variant-item" data-model="Alza" data-variant="X" data-price="66815">
+              Alza X <span>RM 66,815</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Alza" data-variant="H" data-price="72447">
+              Alza H <span>RM 72,447</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Alza" data-variant="AV" data-price="80100">
+              Alza AV <span>RM 80,100</span> <button class="mini" type="button">Pilih</button>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <!-- ARUZ (SUV) -->
+    <div class="card model-card" data-cat="suv" data-keywords="aruz x av">
+      <img src="images/aruz.jpg" alt="Perodua Aruz">
+      <div class="card-body">
+        <h3>Perodua Aruz</h3>
+
+        <details class="variant-box">
+          <summary>Lihat Variant & Harga</summary>
+          <ul class="variant-list">
+            <li class="variant-item" data-model="Aruz" data-variant="X" data-price="76935">
+              Aruz X <span>RM 76,935</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Aruz" data-variant="AV" data-price="82044">
+              Aruz AV <span>RM 82,044</span> <button class="mini" type="button">Pilih</button>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <!-- TRAZ (SUV) -->
+    <div class="card model-card" data-cat="suv" data-keywords="traz x h 2-tone tone">
+      <img src="images/traz.jpg" alt="Perodua Traz">
+      <div class="card-body">
+        <h3>Perodua Traz</h3>
+
+        <details class="variant-box">
+          <summary>Lihat Variant & Harga</summary>
+          <ul class="variant-list">
+            <li class="variant-item" data-model="Traz" data-variant="X" data-price="80463">
+              Traz X <span>RM 80,463</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Traz" data-variant="H" data-price="85567">
+              Traz H <span>RM 85,567</span> <button class="mini" type="button">Pilih</button>
+            </li>
+            <li class="variant-item" data-model="Traz" data-variant="H (2-Tone)" data-price="86448">
+              Traz H (2-Tone) <span>RM 86,448</span> <button class="mini" type="button">Pilih</button>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CALCULATOR MODAL -->
+<div class="modal" id="calcModal" aria-hidden="true">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-label="Loan Calculator">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title">Loan Calculator</div>
+        <div class="modal-sub" id="calcVariantLabel">Pilih variant dahulu.</div>
+      </div>
+      <button class="x" id="closeCalc" type="button">✕</button>
+    </div>
+
+    <div class="calc-grid">
+      <label>
+        Harga OTR (RM)
+        <input id="carPrice" type="number" step="1" value="0">
+      </label>
+
+      <label>
+        Deposit (RM)
+        <input id="deposit" type="number" step="1" value="5000">
+      </label>
+
+      <label>
+        Kadar Faedah (% setahun)
+        <input id="interest" type="number" step="0.1" value="2.3">
+      </label>
+
+      <label>
+        Tempoh (tahun)
+        <select id="years">
+          <option>5</option>
+          <option selected>7</option>
+          <option>9</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="calc-actions">
+      <button class="btn" id="calcBtn" type="button">Kira Ansuran</button>
+      <a class="btn ghost" id="waCalcBtn" href="https://wa.me/60109533465" target="_blank" rel="noopener">WhatsApp Hasil</a>
+    </div>
+
+    <div class="calc-result">
+      <div class="result-big">Ansuran Bulanan: <span id="monthly">—</span></div>
+      <div class="result-sub">Jumlah pinjaman: <span id="loanAmount">—</span> • Jumlah faedah (anggaran): <span id="totalInterest">—</span></div>
+      <div class="result-note">*Kiraan ini anggaran (flat-rate). WhatsApp untuk quotation tepat & promosi semasa.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/60109533465" target="_blank" rel="noopener" aria-label="WhatsApp">
+  WhatsApp
+</a>
+
+<script>
+/* =========================
+   CONFIG: tukar nombor WA
+========================= */
+const WA_NUMBER = "60109533465"; // <-- TUKAR ke nombor awak
+
+/* =========================
+   HELPERS
+========================= */
+const fmt = (n) => "RM " + Number(n).toLocaleString("en-MY", {maximumFractionDigits:0});
+const fmt2 = (n) => "RM " + Number(n).toLocaleString("en-MY", {minimumFractionDigits:2, maximumFractionDigits:2});
+
+let selected = { model: null, variant: null, price: null };
+
+function buildWaText(model, variant, price, extra="") {
+  const base = `Hi, saya nak ${model} ${variant}. Harga OTR: ${fmt(price)}.`;
+  return encodeURIComponent(base + (extra ? `\n${extra}` : "") + `\nBoleh bagi promosi & quotation terkini?`);
+}
+
+function updateSelectedBar() {
+  const bar = document.getElementById("selectedBar");
+  const title = document.getElementById("selTitle");
+  const sub = document.getElementById("selSub");
+  const waBtn = document.getElementById("waVariantBtn");
+
+  if (!selected.model) {
+    title.textContent = "Pilih variant untuk lihat harga + kira ansuran";
+    sub.textContent = "Klik mana-mana variant dalam senarai.";
+    waBtn.href = `https://wa.me/${WA_NUMBER}`;
+    return;
+  }
+
+  title.textContent = `${selected.model} ${selected.variant} — ${fmt(selected.price)}`;
+  sub.textContent = "Klik Loan Calculator untuk kira ansuran bulanan.";
+  waBtn.href = `https://wa.me/${WA_NUMBER}?text=${buildWaText(selected.model, selected.variant, selected.price)}`;
+}
+
+/* =========================
+   VARIANT SELECT (1 + 2)
+========================= */
+document.querySelectorAll(".variant-item").forEach(li => {
+  const btn = li.querySelector(".mini");
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const model = li.dataset.model;
+    const variant = li.dataset.variant;
+    const price = Number(li.dataset.price);
+
+    // highlight selected
+    document.querySelectorAll(".variant-item").forEach(x => x.classList.remove("picked"));
+    li.classList.add("picked");
+
+    selected = { model, variant, price };
+    updateSelectedBar();
+
+    // prefill calculator
+    document.getElementById("carPrice").value = price;
+    document.getElementById("calcVariantLabel").textContent = `${model} ${variant} — Harga OTR ${fmt(price)}`;
+
+    // auto calculate once
+    calcLoan();
+  });
+});
+
+/* =========================
+   FILTER (3)
+========================= */
+const chips = document.querySelectorAll(".chip");
+const cards = document.querySelectorAll(".model-card");
+const searchBox = document.getElementById("searchBox");
+
+let currentFilter = "all";
+
+function applyFilters() {
+  const q = (searchBox.value || "").trim().toLowerCase();
+
+  cards.forEach(card => {
+    const cat = card.dataset.cat;
+    const keywords = (card.dataset.keywords || "").toLowerCase();
+
+    const okCat = (currentFilter === "all") || (cat === currentFilter);
+    const okSearch = !q || keywords.includes(q);
+
+    card.style.display = (okCat && okSearch) ? "" : "none";
+  });
+}
+
+chips.forEach(chip => {
+  chip.addEventListener("click", () => {
+    chips.forEach(c => c.classList.remove("active"));
+    chip.classList.add("active");
+    currentFilter = chip.dataset.filter;
+    applyFilters();
+  });
+});
+
+searchBox.addEventListener("input", applyFilters);
+
+/* =========================
+   CALCULATOR (2)
+   Flat-rate estimate:
+   monthly = (P + (P*r*years)) / (years*12)
+========================= */
+function calcLoan() {
+  const price = Number(document.getElementById("carPrice").value || 0);
+  const dep = Number(document.getElementById("deposit").value || 0);
+  const r = Math.max(0, Number(document.getElementById("interest").value || 0)) / 100;
+  const y = Math.max(1, Number(document.getElementById("years").value || 7));
+
+  const P = Math.max(0, price - dep);
+  const totalInterest = P * r * y;
+  const totalPay = P + totalInterest;
+  const monthly = totalPay / (y * 12);
+
+  document.getElementById("monthly").textContent = fmt2(monthly);
+  document.getElementById("loanAmount").textContent = fmt2(P);
+  document.getElementById("totalInterest").textContent = fmt2(totalInterest);
+
+  
+
+  // WhatsApp calc message
+  const variantLabel = selected.model ? `${selected.model} ${selected.variant}` : "Model/Variant";
+  const extra =
+    `Kira loan (anggaran):\n` +
+    `Harga OTR: ${fmt2(price)}\n` +
+    `Deposit: ${fmt2(dep)}\n` +
+    `Faedah: ${(r*100).toFixed(1)}% setahun\n` +
+    `Tempoh: ${y} tahun\n` +
+    `Anggaran ansuran bulanan: ${fmt2(monthly)}`;
+
+  const msg = selected.model
+    ? buildWaText(selected.model, selected.variant, price, extra)
+    : encodeURIComponent(`Hi, saya nak semak loan.\n${extra}`);
+
+  document.getElementById("waCalcBtn").href = `https://wa.me/${WA_NUMBER}?text=${msg}`;
+}
+
+document.getElementById("calcBtn").addEventListener("click", calcLoan);
+["carPrice","deposit","interest","years"].forEach(id => {
+  document.getElementById(id).addEventListener("input", calcLoan);
+});
+
+/* =========================
+   MODAL OPEN/CLOSE
+========================= */
+const modal = document.getElementById("calcModal");
+const openBtn = document.getElementById("openCalcBtn");
+const closeBtn = document.getElementById("closeCalc");
+const backdrop = document.getElementById("modalBackdrop");
+
+function openModal() {
+  modal.classList.add("show");
+  modal.setAttribute("aria-hidden", "false");
+  calcLoan();
+}
+function closeModal() {
+  modal.classList.remove("show");
+  modal.setAttribute("aria-hidden", "true");
+}
+
+openBtn.addEventListener("click", openModal);
+closeBtn.addEventListener("click", closeModal);
+backdrop.addEventListener("click", closeModal);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
+});
+
+/* init */
+updateSelectedBar();
+applyFilters();
+</script>
+
+<!-- WHATSAPP INTRO POPUP -->
+<div class="wa-popup" id="waPopup">
+  <div class="wa-popup-card">
+    <button class="wa-close" onclick="closeWaPopup()">✕</button>
+
+    <img src="images/amlan.jpg" alt="Amlan Sales Advisor">
+
+    <h3>Hi, saya Amlan</h3>
+    <p>
+      Sales Advisor Perodua Hajoon Sabah.<br>
+      Jika anda perlukan bantuan berkaitan <b>harga, promosi atau loan</b>,
+      saya sedia bantu anda sekarang.
+    </p>
+
+    <a href="https://wa.me/60109533465?text=Hi%20Amlan,%20saya%20nak%20tanya%20tentang%20Perodua"
+       target="_blank"
+       class="wa-btn">
+       Chat WhatsApp Sekarang
+    </a>
+  </div>
+</div>
+
+
+<script>
+function closeWaPopup() {
+  document.getElementById("waPopup").style.display = "none";
+  localStorage.setItem("waPopupShown", "yes");
+}
+
+window.addEventListener("load", () => {
+  if (!localStorage.getItem("waPopupShown")) {
+    setTimeout(() => {
+      document.getElementById("waPopup").style.display = "block";
+    }, 3000);
+  }
+});
+</script>
+
+
+</body>
+</html>

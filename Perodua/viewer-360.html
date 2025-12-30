@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perodua 360° View</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="brand" href="index.html">Perodua Hajoon Sandakan</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="models.html">Model & Harga</a>
+    <a class="active" href="#">360° View</a>
+    <a href="contact.html">Hubungi</a>
+  </div>
+</nav>
+
+<section class="viewer-section">
+  <h1 id="modelTitle">Perodua Myvi</h1>
+  <p>Scroll / swipe untuk pusingkan kereta</p>
+
+  <div class="viewer">
+    <img id="carFrame" src="" alt="Perodua 360 view">
+  </div>
+
+  <a class="btn big" id="waBtn" target="_blank">WhatsApp Amlan</a>
+</section>
+
+<script>
+/* ======================
+   CONFIG (TUKAR SAHAJA)
+====================== */
+const MODEL_NAME = "Myvi";            // Axia / Bezza / Myvi / Ativa / Alza / Aruz / Traz
+const FOLDER = "myvi360";              // axia360, bezza360, etc
+const TOTAL_FRAMES = 24;               // jumlah gambar
+const WA_NUMBER = "60109533465";
+
+/* ======================
+   VIEWER LOGIC
+====================== */
+let currentFrame = 1;
+let autoRotateInterval;
+
+const img = document.getElementById("carFrame");
+const title = document.getElementById("modelTitle");
+const waBtn = document.getElementById("waBtn");
+
+title.innerText = `Perodua ${MODEL_NAME}`;
+waBtn.href = `https://wa.me/${WA_NUMBER}?text=Hi%20Amlan,%20saya%20nak%20info%20Perodua%20${MODEL_NAME}`;
+
+function showFrame(n){
+  if (n > TOTAL_FRAMES) n = 1;
+  if (n < 1) n = TOTAL_FRAMES;
+  currentFrame = n;
+  const f = String(currentFrame).padStart(2,"0");
+  img.src = `images/${FOLDER}/${f}.jpg`;
+}
+
+// preload
+for(let i=1;i<=TOTAL_FRAMES;i++){
+  const im = new Image();
+  im.src = `images/${FOLDER}/${String(i).padStart(2,"0")}.jpg`;
+}
+showFrame(1);
+
+// auto rotate
+function startAuto(){
+  stopAuto();
+  autoRotateInterval = setInterval(()=>showFrame(currentFrame+1), 120);
+}
+function stopAuto(){
+  if(autoRotateInterval) clearInterval(autoRotateInterval);
+}
+startAuto();
+
+// scroll (desktop)
+window.addEventListener("wheel", (e)=>{
+  stopAuto();
+  showFrame(currentFrame + (e.deltaY>0?1:-1));
+  setTimeout(startAuto, 1500);
+});
+
+// touch (mobile)
+let startX = 0;
+img.addEventListener("touchstart",(e)=>{
+  stopAuto();
+  startX = e.touches[0].clientX;
+});
+img.addEventListener("touchmove",(e)=>{
+  const x = e.touches[0].clientX;
+  if (x - startX > 10){ showFrame(currentFrame-1); startX = x; }
+  if (startX - x > 10){ showFrame(currentFrame+1); startX = x; }
+});
+img.addEventListener("touchend",()=>setTimeout(startAuto,1500));
+</script>
+
+</body>
+</html>
