@@ -1204,7 +1204,30 @@ body{
     opacity: 0;
   }
   to {
+
+    /* =========================
+   PROFILE PICTURE FIX
+========================= */
+.profile-pic{
+  width: 120px;          /* saiz selamat */
+  height: 120px;
+  object-fit: cover;     /* tak herot */
+  border-radius: 50%;    /* bulat */
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  display: block;
+  margin: 0 auto 12px;   /* center */
+}
+
+/* Mobile kecilkan sikit */
+@media (max-width: 480px){
+  .profile-pic{
+    width: 90px;
+    height: 90px;
+  }
+}
+
     transform: scale(1);
     opacity: 1;
   }
 }
+
