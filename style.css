@@ -1313,6 +1313,17 @@ img.profile-pic{
   to{ transform: scale(1); opacity: 1; }
 }
 
+/* ===== FIX ANDROID LINK STYLE (NAVBAR) ===== */
+.navbar a,
+.navbar a:visited,
+.navbar a:hover,
+.navbar a:active {
+  color: #ffffff !important;   /* paksa putih */
+  text-decoration: none !important; /* buang underline */
+}
+
+
+
 
 
 
