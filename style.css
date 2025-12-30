@@ -43,10 +43,11 @@ body{
 .brand-sub{ font-size:12px; color:rgba(255,255,255,.75); margin-top:2px; }
 
 .nav-links{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap; /* 👈 ini penting */
+}
 }
 .nav-links a{
   color:#fff;
@@ -1311,6 +1312,7 @@ img.profile-pic{
   from{ transform: scale(.9); opacity: 0; }
   to{ transform: scale(1); opacity: 1; }
 }
+
 
 
 
