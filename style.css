@@ -1255,8 +1255,62 @@ img.profile-pic{
   }
 }
 
+    
     opacity: 1;
   }
 }
+
+/* =========================
+   WHATSAPP POPUP FINAL FIX
+========================= */
+
+.wa-popup{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.wa-popup-card{
+  background: #fff;
+  width: 90%;
+  max-width: 320px;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  animation: popIn .25s ease;
+}
+
+/* 🔥 FIX UTAMA GAMBAR */
+.wa-popup-card img.wa-profile{
+  width: 90px !important;
+  height: 90px !important;
+  max-width: 90px !important;
+  max-height: 90px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  display: block !important;
+  margin: 0 auto 10px !important;
+}
+
+.wa-close{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@keyframes popIn{
+  from{ transform: scale(.9); opacity: 0; }
+  to{ transform: scale(1); opacity: 1; }
+}
+
 
 
