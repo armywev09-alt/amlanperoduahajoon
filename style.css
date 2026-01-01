@@ -1331,6 +1331,43 @@ img.profile-pic{
   -webkit-tap-highlight-color: transparent;
 }
 
+/* ⭐ Rating Animation */
+.rating {
+  margin-top: 10px;
+}
+
+.star {
+  display: inline-block;
+  font-size: 20px;
+  opacity: 0;
+  animation: starPop 0.6s ease forwards;
+}
+
+.star:nth-child(1) { animation-delay: 0.1s; }
+.star:nth-child(2) { animation-delay: 0.2s; }
+.star:nth-child(3) { animation-delay: 0.3s; }
+.star:nth-child(4) { animation-delay: 0.4s; }
+.star:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes starPop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.rating-text {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+
+
 
 
 
