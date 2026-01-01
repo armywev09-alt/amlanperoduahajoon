@@ -1366,6 +1366,34 @@ img.profile-pic{
   color: #555;
 }
 
+/* 🏆 Top Sales Badge Animation */
+.top-sales-badge {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff3d3d, #ff9800);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 8px 0;
+  animation: pulseBadge 1.8s infinite;
+}
+
+@keyframes pulseBadge {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 61, 61, 0.6);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(255, 61, 61, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 61, 61, 0.6);
+  }
+}
+
 
 
 
