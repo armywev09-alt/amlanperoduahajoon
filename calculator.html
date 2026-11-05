@@ -1,76 +1,60 @@
 <!DOCTYPE html>
+
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AMLAN PERODUA HAJOON | Kalkulator Loan Perodua</title>
-  <link rel="stylesheet" href="style.css?v=20261105-banner2">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AMLAN PERODUA HAJOON | Kalkulator Loan Perodua</title>
+<link href="style.css?v=20261105-allpages3" rel="stylesheet"/>
 </head>
-
-<body>
-
-<nav class="navbar"><a class="brand" href="index.html"><span class="brand-mark">AH</span><span class="brand-text"><span class="brand-title">AMLAN <em>PERODUA HAJOON</em></span><span class="brand-sub">Sales Advisor Perodua • Sandakan, Sabah</span></span></a><div class="nav-links"><a href="index.html">Utama</a><a href="models.html">Model & Harga</a><a href="calculator.html">Kalkulator Loan</a><a href="about.html">Tentang Saya</a><a href="contact.html">Hubungi</a></div><a class="nav-contact" href="https://wa.me/60128372191" target="_blank" rel="noopener">WhatsApp Saya ↗</a></nav>
+<body class="premium-subpage calculator-page"><nav aria-label="Navigasi utama" class="ap-nav"><a class="ap-brand" href="index.html"><span class="ap-brand-monogram">AH</span><span><strong>AMLAN <em>PERODUA HAJOON</em></strong><small>Sales Advisor · Perodua Hajoon Sdn Bhd</small></span></a><div class="ap-menu"><a href="index.html">Utama</a><a href="models.html">Model</a><a class="active" href="calculator.html">Kalkulator</a><a href="about.html">Tentang Saya</a><a href="contact.html">Hubungi</a></div><a class="ap-nav-wa" href="https://wa.me/60128372191" rel="noopener" target="_blank">WhatsApp ↗</a></nav><header class="premium-page-hero"><div class="premium-page-hero-inner"><span class="premium-eyebrow">KALKULATOR LOAN</span><h1>Rancang ansuran bulanan</h1><p>Anggaran bayaran bulanan untuk membantu anda membuat pilihan.</p></div><img alt="Amlan Hamka, Sales Advisor" loading="lazy" src="images/amlan.jpg"/></header>
 
 <section class="section">
-  <h1 class="center">Kalkulator Loan Perodua</h1>
-  <p class="center muted">Pilih model → variant → ansuran keluar automatik</p>
-
-  <div class="car-preview">
-    <img id="carImage" src="images/myvi.jpg" alt="Model Perodua">
-  </div>
-
-  <div class="promo-ticker">
-    <div class="promo-track">
+<h1 class="center">Kalkulator Loan Perodua</h1>
+<p class="center muted">Pilih model → variant → ansuran keluar automatik</p>
+<div class="car-preview">
+<img alt="Model Perodua" id="carImage" src="images/myvi.jpg"/>
+</div>
+<div class="promo-ticker">
+<div class="promo-track">
       PROMOSI PERODUA ARUZ REBAT RM800 • PROMOSI PERODUA ATIVA REBAT RM7,000
     </div>
-  </div>
-
-  <div class="loan-box">
-
-    <label>Model</label>
-    <select id="modelSelect">
-      <option value="">Pilih Model</option>
-      <option>Axia</option>
-      <option>Bezza</option>
-      <option>Myvi</option>
-      <option>Ativa</option>
-      <option>Alza</option>
-      <option>Aruz</option>
-      <option>Traz</option>
-    </select>
-
-    <label>Variant</label>
-    <select id="variantSelect" disabled>
-      <option value="">Pilih Variant</option>
-    </select>
-
-    <label>Harga OTR (RM)</label>
-    <input id="priceInput" readonly>
-
-    <label>Deposit (RM)</label>
-    <input id="depositInput" value="0">
-
-    <label>Kadar Faedah (%)</label>
-    <input id="interestInput">
-
-    <label>Tempoh (Tahun)</label>
-    <select id="yearInput">
-      <option>5</option>
-      <option>7</option>
-      <option selected>9</option>
-    </select>
-
-    <h3 id="resultText">Ansuran Bulanan: —</h3>
-
-    <a id="waBtn" class="btn-whatsapp" target="_blank" style="display:none;">
+</div>
+<div class="loan-box">
+<label>Model</label>
+<select id="modelSelect">
+<option value="">Pilih Model</option>
+<option>Axia</option>
+<option>Bezza</option>
+<option>Myvi</option>
+<option>Ativa</option>
+<option>Alza</option>
+<option>Aruz</option>
+<option>Traz</option>
+</select>
+<label>Variant</label>
+<select disabled="" id="variantSelect">
+<option value="">Pilih Variant</option>
+</select>
+<label>Harga OTR (RM)</label>
+<input id="priceInput" readonly=""/>
+<label>Deposit (RM)</label>
+<input id="depositInput" value="0"/>
+<label>Kadar Faedah (%)</label>
+<input id="interestInput"/>
+<label>Tempoh (Tahun)</label>
+<select id="yearInput">
+<option>5</option>
+<option>7</option>
+<option selected="">9</option>
+</select>
+<h3 id="resultText">Ansuran Bulanan: —</h3>
+<a class="btn-whatsapp" id="waBtn" style="display:none;" target="_blank">
       WhatsApp Untuk Quotation
     </a>
-
-  </div>
+</div>
 </section>
-
 <a class="wa-float" href="https://wa.me/60128372191" target="_blank">WhatsApp</a>
-
 <script>
 /* ======================
    DATA
@@ -203,6 +187,5 @@ variantSelect.addEventListener("change", () => {
   el.addEventListener("input", calcLoan);
 });
 </script>
-
 </body>
 </html>
