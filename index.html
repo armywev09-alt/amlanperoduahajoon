@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amlan | Sales Advisor Perodua Hajoon Sabah</title>
+  <title>AMLAN PERODUA HAJOON | Amlan | Sales Advisor Perodua Hajoon Sabah</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,31 +11,12 @@
 
 
 <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="models.html">Model & Harga</a>
-    <a href="about.html">Tentang Saya</a>
-    <a href="contact.html">Hubungi</a>
-    <a href="calculator.html">Kalkulator</a>
-  </div>
-</nav>
+<nav class="navbar"><a class="brand" href="index.html"><span class="brand-mark">AH</span><span class="brand-text"><span class="brand-title">AMLAN <em>PERODUA HAJOON</em></span><span class="brand-sub">Sales Advisor Perodua • Sandakan, Sabah</span></span></a><div class="nav-links"><a href="index.html">Utama</a><a href="models.html">Model & Harga</a><a href="calculator.html">Kalkulator Loan</a><a href="about.html">Tentang Saya</a><a href="contact.html">Hubungi</a></div><a class="nav-contact" href="https://wa.me/60128372191" target="_blank" rel="noopener">WhatsApp Saya ↗</a></nav>
 
-<!-- HERO SLIDER -->
-<header class="hero">
-  <div class="hero-slider">
-    <img src="images/banner1.jpg" class="hero-slide active" alt="Banner 1">
-    <img src="images/banner2.jpg" class="hero-slide" alt="Banner 2">
-    <img src="images/banner3.jpg" class="hero-slide" alt="Banner 3">
-
-    <div class="hero-overlay">
-      <h1>Amlan | Sales Advisor Perodua Hajoon Sabah</h1>
-      <p>Harga OTR • Ansuran Rendah • Proses Pantas</p>
-      <a class="btn big" href="models.html">Lihat Model & Harga</a>
-    </div>
-  </div>
-</header>
-
+<!-- PREMIUM HERO -->
+<header class="premium-hero"><div class="hero-copy"><span class="eyebrow">SALES ADVISOR PERODUA • SANDAKAN, SABAH</span><h1>Kereta Impian Anda,<br><span>Urusan Saya.</span></h1><p>Selamat datang ke <strong>AMLAN PERODUA HAJOON</strong>. Semak model, harga dan anggaran ansuran dengan mudah. Saya bantu dari pertanyaan pertama hingga serahan kunci.</p><div class="hero-actions"><a class="btn big" href="models.html">Terokai Model Perodua →</a><a class="btn-outline" href="https://wa.me/60128372191" target="_blank" rel="noopener">Hubungi Amlan</a></div><div class="hero-points"><span>✓ Konsultasi Percuma</span><span>✓ Bantuan Permohonan Loan</span><span>✓ Urusan Mudah</span></div></div><div class="hero-visual"><img src="images/amlan.jpg" alt="Amlan Hamka, Sales Advisor Perodua Hajoon"><div class="hero-nameplate"><strong>AMLAN HAMKA</strong><span>Sales Advisor • Perodua Hajoon</span></div></div></header>
+<section class="quick-links"><a href="models.html"><span class="quick-icon">🚗</span><span><strong>Semua Model</strong><small>Kenali pilihan Perodua</small></span><b>↗</b></a><a href="calculator.html"><span class="quick-icon">▦</span><span><strong>Kalkulator Loan</strong><small>Anggaran bayaran bulanan</small></span><b>↗</b></a><a href="about.html"><span class="quick-icon">★</span><span><strong>Kenali Amlan</strong><small>Khidmat jualan peribadi</small></span><b>↗</b></a><a href="contact.html"><span class="quick-icon">☎</span><span><strong>Hubungi Saya</strong><small>012-837 2191</small></span><b>↗</b></a></section>
+<section class="model-showcase"><div class="section-heading"><div><span class="eyebrow">PILIHAN UNTUK ANDA</span><h2>Terokai Model Perodua</h2><p>Pilih kereta yang sesuai dengan gaya hidup dan bajet anda.</p></div><a href="models.html" class="text-link">Lihat semua model →</a></div><div class="showcase-grid"><a class="showcase-card" href="models.html"><img src="images/axia.jpg" alt="Perodua Axia"><strong>AXIA</strong><span>Lihat model & harga →</span></a><a class="showcase-card" href="models.html"><img src="images/bezza.jpg" alt="Perodua Bezza"><strong>BEZZA</strong><span>Lihat model & harga →</span></a><a class="showcase-card" href="models.html"><img src="images/myvi.jpg" alt="Perodua Myvi"><strong>MYVI</strong><span>Lihat model & harga →</span></a><a class="showcase-card" href="models.html"><img src="images/ativa.jpg" alt="Perodua Ativa"><strong>ATIVA</strong><span>Lihat model & harga →</span></a><a class="showcase-card" href="models.html"><img src="images/alza.jpg" alt="Perodua Alza"><strong>ALZA</strong><span>Lihat model & harga →</span></a><a class="showcase-card" href="models.html"><img src="images/aruz.jpg" alt="Perodua Aruz"><strong>ARUZ</strong><span>Lihat model & harga →</span></a><a class="showcase-card" href="models.html"><img src="images/traz.jpg" alt="Perodua Traz"><strong>TRAZ</strong><span>Lihat model & harga →</span></a></div></section>
 <!-- PROFILE INTRO -->
 <section class="profile-intro">
   <div class="profile-card">
@@ -201,15 +182,6 @@
 <a class="wa-float" href="https://wa.me/60128372191" target="_blank">WhatsApp</a>
 
 <script>
-/* ===== HERO SLIDER ===== */
-let i = 0;
-const slides = document.querySelectorAll(".hero-slide");
-setInterval(() => {
-  slides[i].classList.remove("active");
-  i = (i + 1) % slides.length;
-  slides[i].classList.add("active");
-}, 3500);
-
 /* ===== DATA MODEL ===== */
 const WA = "60128372191";
 const data = {
