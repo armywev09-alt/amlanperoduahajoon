@@ -1,0 +1,21 @@
+UPGRADE LOGIN ADMIN AMLAN - Cloudflare Worker + GitHub OAuth
+
+1. Cloudflare Worker amlan-admin-auth > Settings > Variables and Secrets:
+   GITHUB_CLIENT_ID (Text) - sudah dibuat
+   GITHUB_CLIENT_SECRET (Secret) - sudah dibuat
+   GITHUB_WRITE_TOKEN (Secret) - token fine-grained yang digunakan sebelum ini, Contents Read and write untuk repository sahaja
+   SESSION_SECRET (Secret) - jana string rawak panjang sekurang-kurangnya 32 aksara. Jangan guna password biasa.
+   Jangan letak mana-mana secret dalam worker.js atau fail website.
+
+2. Cloudflare > Worker > Edit code: gantikan kod worker.js dengan kod daripada fail worker.js dalam ZIP. Deploy.
+
+3. Upload fail admin-app.html ke ROOT repository GitHub armywev09-alt/amlanperoduahajoon. Jangan gantikan index.html atau fail website lain.
+
+4. Buka https://amlan-admin-auth.armywev09.workers.dev/admin
+   Klik Login dengan GitHub. Hanya akaun armywev09-alt dibenarkan.
+
+5. Selepas berfungsi, boleh buat pautan /admin.html redirect ke URL Worker, tetapi JANGAN gantikan admin.html lama sebelum menguji versi baru.
+
+NOTA: Token GitHub fine-grained masih tamat pada 5 Dis 2026 dan perlu diperbaharui sebagai Secret GITHUB_WRITE_TOKEN selepas tamat tempoh. Login OAuth tidak menggantikan kebenaran menulis GitHub. Session tamat selepas 8 jam.
+
+KESELAMATAN: Hanya Worker boleh membaca Secret; elakkan berkongsi atau screenshot token. Admin app disajikan dari Worker pada domain workers.dev supaya cookie login tidak disekat oleh browser.
