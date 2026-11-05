@@ -1,0 +1,70 @@
+{
+  "rebates": {
+    "AXIA": "RM500 – RM4,900",
+    "BEZZA": "RM1,000 – RM5,000",
+    "MYVI": "RM1,500",
+    "ATIVA": "RM6,500 – RM7,500",
+    "ALZA": "HUBUNGI SAYA",
+    "ARUZ": "RM4,000",
+    "TRAZ": "HUBUNGI SAYA"
+  },
+  "images": {
+    "images/amlan.webp": "images/amlan.webp",
+    "images/myvi.webp": "images/myvi.webp",
+    "images/amlan-hajoon-banner.webp": "images/amlan-hajoon-banner.webp",
+    "images/axia.webp": "images/axia.webp",
+    "images/bezza.webp": "images/bezza.webp",
+    "images/ativa.webp": "images/ativa.webp",
+    "images/alza.webp": "images/alza.webp",
+    "images/aruz.webp": "images/aruz.webp",
+    "images/traz.webp": "images/traz.webp",
+    "images/staff-hajoon.webp": "images/staff-hajoon.webp",
+    "images/topsales1.webp": "images/topsales1.webp",
+    "images/topsales2.webp": "images/topsales2.webp",
+    "images/topsales3.webp": "images/topsales3.webp",
+    "images/topsales4.jpg": "images/topsales4.jpg",
+    "images/topsales5.webp": "images/topsales5.webp",
+    "images/delivery/delivery1.webp": "images/delivery/delivery1.webp",
+    "images/delivery/delivery2.webp": "images/delivery/delivery2.webp",
+    "images/delivery/delivery4.webp": "images/delivery/delivery4.webp",
+    "images/delivery/delivery5.webp": "images/delivery/delivery5.webp",
+    "images/delivery/delivery6.webp": "images/delivery/delivery6.webp",
+    "images/delivery/delivery7.webp": "images/delivery/delivery7.webp",
+    "images/delivery/delivery8.webp": "images/delivery/delivery8.webp",
+    "images/delivery/delivery9.webp": "images/delivery/delivery9.webp",
+    "images/delivery/delivery10.webp": "images/delivery/delivery10.webp"
+  },
+  "galleries": {
+    "delivery": [
+      "images/delivery/delivery1.webp",
+      "images/delivery/delivery2.webp",
+      "images/delivery/delivery4.webp",
+      "images/delivery/delivery5.webp",
+      "images/delivery/delivery6.webp",
+      "images/delivery/delivery7.webp",
+      "images/delivery/delivery8.webp",
+      "images/delivery/delivery9.webp",
+      "images/delivery/delivery10.webp",
+      "images/delivery/delivery1.webp",
+      "images/delivery/delivery2.webp",
+      "images/delivery/delivery4.webp",
+      "images/delivery/delivery5.webp",
+      "images/delivery/delivery6.webp",
+      "images/delivery/delivery7.webp",
+      "images/delivery/delivery8.webp",
+      "images/delivery/delivery9.webp",
+      "images/delivery/delivery10.webp",
+      "images/delivery/delivery4.webp",
+      "images/delivery/delivery5.webp",
+      "images/delivery/delivery6.webp",
+      "images/delivery/delivery7.webp"
+    ],
+    "topsales": [
+      "images/topsales1.webp",
+      "images/topsales2.webp",
+      "images/topsales3.webp",
+      "images/topsales4.jpg",
+      "images/topsales5.webp"
+    ]
+  }
+}

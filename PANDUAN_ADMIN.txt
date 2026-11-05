@@ -1,0 +1,12 @@
+ADMIN PANEL AMLAN PERODUA HAJOON
+
+1. Upload SEMUA fail dalam ZIP ini ke repository GitHub Pages (replace fail lama).
+2. Buka https://amlanperoduahajoon.com/admin.html
+3. Di GitHub, Settings > Developer settings > Personal access tokens > Fine-grained tokens > Generate new token.
+4. Repository access: Only select repositories > armywev09-alt/amlanperoduahajoon.
+5. Repository permissions: Contents > Read and write. Tetapkan expiry yang sesuai.
+6. Copy token dan paste dalam Admin Panel. Jangan kongsi token.
+7. Tukar rebat / upload gambar / urus galeri > Simpan Semua Perubahan.
+8. GitHub Pages akan publish selepas deploy siap.
+
+PENTING: GitHub Pages tiada login server. Token dimasukkan setiap kali buka panel; tidak disimpan dalam website atau browser storage. Jangan kongsi token. Jika token bocor, revoke di GitHub. Admin page boleh dilihat orang awam tetapi mereka tidak boleh mengubah repository tanpa token berizin. Gambar upload disimpan di images/admin. Fail asal tidak dipadam. Had upload panel 8MB per gambar.
