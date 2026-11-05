@@ -31,7 +31,7 @@ export default {async fetch(req,env){try{
  if(path==='/auth/logout')return redirect(BASE+'/admin',cookie('amlan_session','',0));
  let session=await verify(env,getCookie(req,'amlan_session'));
  if(path==='/'||path==='/admin'){if(!session)return response('<!doctype html><html lang="ms"><meta name="viewport" content="width=device-width"><title>Admin AMLAN</title><body style="font:16px system-ui;max-width:500px;margin:12vh auto;padding:20px"><h2>AMLAN PERODUA HAJOON</h2><p>Admin Panel</p><a href="/auth/login" style="display:inline-block;background:#b91c1c;color:white;padding:14px 22px;border-radius:8px;text-decoration:none">Login dengan GitHub</a></body></html>',200,{'Content-Type':'text/html;charset=utf-8'});
- let page=await fetch(WEB+'/admin-app.html',{headers:{'Cache-Control':'no-cache'}});if(!page.ok)return response('Fail admin-app.html belum dimuat naik ke GitHub Pages',503);return response(await page.text(),200,{'Content-Type':'text/html;charset=utf-8'});
+ let page=await fetch(WEB+'/admin-app.html?v=20261106-fix-upload',{headers:{'Cache-Control':'no-cache'}});if(!page.ok)return response('Fail admin-app.html belum dimuat naik ke GitHub Pages',503);return response(await page.text(),200,{'Content-Type':'text/html;charset=utf-8'});
  }
  if(path==='/api/me')return session?json({login:OWNER}):json({error:'Unauthorized'},401);
  if(path.startsWith('/api/')){
@@ -44,9 +44,9 @@ export default {async fetch(req,env){try{
    let body=await req.text();if(body.length>300000)return json({error:'Data terlalu besar'},413);let obj=JSON.parse(body);if(typeof obj.sha!=='string'||typeof obj.content!=='string'||obj.content.length>250000)return json({error:'Data tidak sah'},400);
    let r=await github(`/repos/${OWNER}/${REPO}/contents/admin-content.json`,env,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'Admin: update website content',content:obj.content,sha:obj.sha,branch:'main'})});return json(await r.json(),r.status);
   }
-  if(path==='/api/upload'&&req.method==='POST'){
+  if(path==='/api/upload'&&(req.method==='POST'||req.method==='PUT')){
    let obj=await req.json();if(typeof obj.content!=='string'||obj.content.length>11_000_000||!/^images\/admin\/[a-zA-Z0-9._-]+\.(jpg|jpeg|png|webp|gif)$/.test(obj.path||''))return json({error:'Fail tidak sah'},400);
-   let r=await github(`/repos/${OWNER}/${REPO}/contents/${obj.path}`,env,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'Admin: upload image',content:obj.content,branch:'main'})});return json(await r.json(),r.status);
+   let r=await github(`/repos/${OWNER}/${REPO}/contents/${obj.path}`,env,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'Admin: upload image',content:obj.content,branch:'main'})});let result=await r.json();if(!r.ok)return json({error:'GitHub upload gagal ('+r.status+'): '+(result.message||'Unknown error'),details:result.errors||null},r.status);return json(result,r.status);
   }
   return json({error:'Not found'},404);
  }
